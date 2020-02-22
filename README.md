@@ -1,11 +1,15 @@
 # Assignment 2.3
 
 การติดตั้ง
+- npm init –yes
+- npm install web3@0.20.7 –save
 - npm install -g serve
 
 รัน
 - serve
-- ไปที่ http://localhost:5000/KurokoBasketShop
+
+
+ไปที่ http://localhost:5000/KurokoBasketShop
 
 บัญชี Ether ที่ใช้  :  0xA585d80E24A3003038fC6e4ce01d61598Ef668B9
 

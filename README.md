@@ -4,8 +4,9 @@
 1. npm install -g serve
 2. npm install -g web3
 
-รันด้วยคำสั่ง 
+รัน
 - serve
+- ไปที่ http://localhost:5000/KurokoBasketShop
 
 บัญชี Ether ที่ใช้  :  0xA585d80E24A3003038fC6e4ce01d61598Ef668B9
 

@@ -11,7 +11,7 @@ contract KurokoCharacter {
         bool haveOwner;
     }
     
-    uint P_ID = 0;
+    uint K_ID = 0;
     
     uint[] collectionCharaterId;
     mapping (uint => KuroCharacter) kCharacter;
@@ -20,7 +20,7 @@ contract KurokoCharacter {
 
     
     function addCharacter(string memory name,uint256 priceTag ,string memory imagePath) public returns(uint id){
-        uint Id = P_ID++;
+        uint Id = K_ID++;
         
         kCharacter[Id] = KuroCharacter(Id,name, priceTag, address(0x0000000000000000000000000000000000000000), imagePath,false);
         collectionCharaterId.push(Id);
@@ -57,7 +57,7 @@ contract KurokoCharacter {
     }
     
     function getNextValId() public view returns(uint){
-        return P_ID;
+        return K_ID;
     }
     
 }

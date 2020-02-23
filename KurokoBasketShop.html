@@ -58,7 +58,7 @@
     }
 
 
-    let abiMon = [
+    let abi = [
 	{
 		"constant": false,
 		"inputs": [
@@ -207,8 +207,8 @@
 		"type": "function"
 	}
 ];
-    var initMonContract = web3.eth.contract(abiMon);
-    var monContract = initMonContract.at('0x6702E11241510eCDDfe6A5B2298Ce6D24C141C59');
+    var initContract = web3.eth.contract(abi);
+    var Contract = initContract.at('0x6702E11241510eCDDfe6A5B2298Ce6D24C141C59');
 
 
     $(document).ready(function () {
@@ -220,7 +220,7 @@
 
 
     var soldCharacterEvent = 
-    monContract.SoldCharacter();
+    Contract.SoldCharacter();
 
             soldCharacterEvent.watch(function(error, result) {
             if (!error){
@@ -235,7 +235,7 @@
         });
 
     var purchaseCharacterErrorLog = 
-    monContract.PurchaseCharacterErrorLog();
+    Contract.PurchaseCharacterErrorLog();
 
             purchaseCharacterErrorLog.watch(function(error, result) {
             if (!error){
@@ -251,7 +251,7 @@
     
 
     function purchaseCharacter(id, price_tag) {
-        monContract.sellCharacter(id,{
+        Contract.sellCharacter(id,{
               gas: 300000,
               from: web3.eth.accounts[0],
               value: price_tag
@@ -268,9 +268,9 @@
 
 
     function getList(){
-        monContract.getAllCharacter(function (error, result) {
+        Contract.getAllCharacter(function (error, result) {
             for (var i in result) {
-                monContract.getChracterById(i,
+                Contract.getChracterById(i,
                     (error, result) => {
                         console.log(result);
                         if (!error) {
